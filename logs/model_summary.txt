@@ -1,0 +1,35 @@
+MILClassifier(
+  (Conv2d_one): Conv2d(1, 20, kernel_size=(5, 5), stride=(1, 1))
+  (Conv2d_two): Conv2d(20, 50, kernel_size=(5, 5), stride=(1, 1))
+  (Linear_one): Linear(in_features=800, out_features=500, bias=True)
+  (pooling): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+  (Relu): ReLU()
+  (Softmax): Softmax()
+)
+
+-------------------------------------------------------------------------------------------------
+
+Attention(
+  (V): Linear(in_features=500, out_features=128, bias=False)
+  (w): Linear(in_features=128, out_features=1, bias=False)
+)
+
+-------------------------------------------------------------------------------------------------
+
+Classifier(
+  (classify_one): Linear(in_features=500, out_features=200, bias=True)
+  (classify_two): Linear(in_features=200, out_features=52, bias=True)
+  (classify_three): Linear(in_features=52, out_features=2, bias=True)
+  (relu): ReLU()
+)
+
+------------------------------------------------------------------------------------------------
+
+BAG_SIZE = 300
+PROB = 0.6
+NUM_BAGS = 15000
+HIDDEN_DIM = 500
+V_DIM = 128
+NUM_CLASSES = 2
+TARGET = 9
+NON-TARGET = all
